@@ -1,0 +1,46 @@
+$anchor-orange-light: #ff9111;
+$anchor-orange-dark: #dd7700;
+$background-black: #111111;
+$background-dark: #292929;
+$background-light: #333333;
+$header-orange: #dd7700;
+$text-gray: #8c8c8c;
+$text-white: #cccccc;
+
+@mixin baseDisplayGrid() {
+  display: grid;
+  row-gap: 0.4em;
+}
+
+@mixin hideFileInputs() {
+  input[type='file'] {
+    visibility: hidden;
+    position: absolute;
+  }
+}
+
+@mixin indent() {
+  padding-left: 2em;
+}
+
+@mixin oneColumnLayout($textAlign: center) {
+  @include baseDisplayGrid();
+  grid-template-columns: 1fr;
+  text-align: $textAlign;
+}
+
+@mixin smallNumberInputs($size: 2em) {
+  input[type='number'] {
+    width: $size;
+  }
+}
+
+@mixin standardBorder() {
+  border: solid 1px $header-orange;
+}
+
+@mixin twoColumnLayout($textAlign: left) {
+  @include baseDisplayGrid();
+  grid-template-columns: repeat(2, 1fr);
+  text-align: $textAlign;
+}
